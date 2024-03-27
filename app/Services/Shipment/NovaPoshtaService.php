@@ -9,7 +9,6 @@ class NovaPoshtaService implements ShipmentServiceI {
      */
     public function handle(array $sender, array $receiver, array $shipmentInfo): void
     {
-        dd('nova');
         //some impementation...
     }
 }
