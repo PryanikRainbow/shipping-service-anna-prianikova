@@ -7,7 +7,7 @@ class NovaPoshtaService implements ShipmentServiceI {
     /**
      * {@inheritdoc}
      */
-    public function handle(array $sender, array $receiver, array $shipmentInfo): void
+    public function createShipment(array $sender, array $receiver, array $shipmentInfo): void
     {
         //some impementation...
     }

@@ -14,8 +14,13 @@ class CreateShipmentHandler implements Handler
      */
     public function handle(CreateShipment|Command $command): array
     {
-        $className = '\\App\Services\Shipment\\' . $command->shipmentInfo()['shipmentService'] . 'Service';
-        (new $className())->handle($command->sender(), $command->receiver(), $command->shipmentInfo());
+        $serviceClass = '\\App\Services\Shipment\\' . $command->shipmentInfo()['shipmentService'] . 'Service';
+
+        if (!class_exists($serviceClass)) {
+            throw new \Exception("Service $serviceClass does not exist");
+        }
+
+        (new $serviceClass())->createShipment($command->sender(), $command->receiver(), $command->shipmentInfo());
 
         return ['Message' => 'OK'];
     }

@@ -11,5 +11,5 @@ interface ShipmentServiceI {
      *
      * @return void
      */
-    public function handle(array $sender, array $receiver, array $shipmentInfo): void;
+    public function createShipment(array $sender, array $receiver, array $shipmentInfo): void;
 }
