@@ -3,7 +3,6 @@
 ## Used Technologies:
 - Laravel 10
 - PHP 8.1
-- MySQL
 - Composer
 - Postman (for testing)
 
